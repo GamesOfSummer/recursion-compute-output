@@ -50,7 +50,7 @@ function bubbleSort(array) {
             }
         }
         var value = array.pop();
-        return value + bubbleSort(array);
+        return [value].concat(bubbleSort(array));
     }
 }
 consoleStart();

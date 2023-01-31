@@ -61,26 +61,21 @@ function bubbleSort(array: number[]) {
     else 
     {
 
-
         for(let i = 0; i < array.length; i++)
         {
             if ((array[i] < array[i + 1]))
             {
                 const lesserValue = array[i];
                 const greaterValue = array[i + 1];
-            
-            
+               
                 array[i] = greaterValue;
                 array[i + 1] = lesserValue;
             }
         }
 
-      
-
         const value = array.pop();
-        return value + bubbleSort(array);
+        return [value].concat(bubbleSort(array));
     }
-
 }
 
 
