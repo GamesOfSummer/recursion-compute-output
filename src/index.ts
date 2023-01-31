@@ -52,19 +52,24 @@ function crudeSort(array: number[], n: number) {
 
 
 
-function betterSort(array: number[], n: number) {
+function bubbleSort(array: number[]) {
     
-    if(n === 0)
+    if(array.length < 1)
     {
-        return array[n];
+        return array;
     }
-    else if (array[n] < betterSort(array, n - 1))
+    else if (array.length > 2 && (array[array.length - 2] < array[array.length - 1]))
     {
-        return array[n];
-    }
-    else
-    {
-        return betterSort(array, n-1);
+
+        const lesserValue = array[array.length - 2];
+        const greaterValue = array[array.length - 1];
+
+
+        array[array.length - 1] = lesserValue;
+        array[array.length - 2] = greaterValue;
+
+        array.pop();
+        return bubbleSort(array);
     }
 
 }
@@ -79,6 +84,11 @@ console.log(crudeSort([1,2,3], 5));
 console.log(crudeSort([1,2,3,4,5,6], 3));
 console.log(crudeSort([6,3,2,0,13], 3));
 console.log(crudeSort([36,110,42,2], 1));
+
+
+
+console.log(bubbleSort([36,110,42,2]));
+
 
 consoleEnd();
 

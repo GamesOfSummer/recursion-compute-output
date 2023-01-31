@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var consoleStart = function () {
     console.log('\x1b[33m', 'Running test cases...');
     console.log('');
@@ -57,3 +57,4 @@ console.log(crudeSort([36, 110, 42, 2], 1));
 console.log(bubbleSort([36, 110, 42, 2]));
 consoleEnd();
 consoleBuffer();
+//# sourceMappingURL=index.js.map
