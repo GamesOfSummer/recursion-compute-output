@@ -40,20 +40,23 @@ function bubbleSort(array) {
     if (array.length < 1) {
         return array;
     }
-    else if (array.length > 2 && (array[array.length - 2] < array[array.length - 1])) {
-        var lesserValue = array[array.length - 2];
-        var greaterValue = array[array.length - 1];
-        array[array.length - 1] = lesserValue;
-        array[array.length - 2] = greaterValue;
-        array.pop();
-        return bubbleSort(array);
+    else {
+        for (var i = 0; i < array.length; i++) {
+            if ((array[i] < array[i + 1])) {
+                var lesserValue = array[i];
+                var greaterValue = array[i + 1];
+                array[i] = greaterValue;
+                array[i + 1] = lesserValue;
+            }
+        }
+        var value = array.pop();
+        return value + bubbleSort(array);
     }
 }
 consoleStart();
-console.log(crudeSort([1, 2, 3], 5));
-console.log(crudeSort([1, 2, 3, 4, 5, 6], 3));
 console.log(crudeSort([6, 3, 2, 0, 13], 3));
 console.log(crudeSort([36, 110, 42, 2], 1));
 console.log(bubbleSort([36, 110, 42, 2]));
+console.log(bubbleSort([36, 11, 44, 22, 44, 99, 11]));
 consoleEnd();
 consoleBuffer();
